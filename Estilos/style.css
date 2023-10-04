@@ -1,0 +1,191 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: rgb(255, 255, 255);
+    background-image: url("../Media/ffffff.gif");
+    /* Establecer el tamaño de la imagen de fondo */
+    background-size: cover;
+    /* Establecer la posición de la imagen de fondo */
+    background-position: center center;
+    /* Establecer si la imagen de fondo se repite o no */
+    background-repeat: no-repeat;
+    /* Ajustar el tamaño del fondo en relación con el elemento contenedor */
+    width: 100%;
+    height: 400px; /* Define la altura deseada del contenedor */
+    /* Establecer que la imagen de fondo esté quieta */
+    background-attachment: fixed;
+}
+
+/*CONFIGURACION DEL MENU DE NAVEGACION para centrarlo en el celu*/
+.menu_url{
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /*QUITAR EL MENU A PASAR AL MODO VISTA CELULAR*/
+  transform: translateY(-100%);
+  /*TRANSICION SOBRE ELEMENTOS*/
+  transition: 0.3s ease;
+  background-color: #ffffffe3;
+}
+
+.item{
+    /*1-->16px*/
+    /*SEPARAMOS EL TEXTO*/
+    padding: 0.5em;
+    text-decoration: none;
+}
+
+/*ES EL CUADRO DEL TEXTO DEL FONDO O LA CLASE QUE TIENE*/
+.item:hover{
+    border: 2px solid #000;
+    border-radius: 10px;
+    padding: 6px;
+}
+
+.link_url{
+    text-decoration: none;
+    color: #000;
+    font-size: 18px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.link_url:hover{
+    color: rgb(0, 0, 0);
+}
+
+.menu_icono{
+    width: 40px;
+    position: absolute;
+    right: 1em;
+    top: 0.5em;
+    /*esto es para posocionar*/
+    cursor: pointer;
+    /*son capas*/
+    z-index: 1;
+}
+
+img{
+    max-width: 100%;
+}
+
+/*clase generada de javacripts*/
+.abrir{
+    transform: translateY(0);
+}
+
+/*CARUSEL*/
+.carousel-inner img{
+    height: 100vh;
+    /*centrar*/
+    background-position: center center;
+    /*tamaño grande sin estirar*/
+    background-size: cover;
+    /*no se repite*/
+    background-repeat: no-repeat;
+
+}
+
+/*SECTOR DE MEDIA QUERY*/
+@media screen and (min-width:769px) {
+    .menu_url{
+        flex-direction: row;
+        justify-content: center;
+        padding: 0.5em;
+        transform: translateY(0);
+    }
+    .menu_icono{
+        display: none;
+    }
+    .menu_url{
+        padding: 1em;
+    }
+}
+
+.info{
+color:rgb(255, 255, 255);
+text-align: center ;
+position: relative;
+font-size: 30px; /* Tamaño de fuente */
+padding: 10px; /* Espacio alrededor del párrafo */
+max-width: 70%; /* Ancho máximo del elemento */
+margin-left: auto; /* Margen izquierdo automático para centrar */
+margin-right: auto; /* Margen derecho automático para centrar */
+}
+.info img {
+    font-size: 240%;
+    margin: -135px;
+}
+
+.info h5 {
+    margin: 7px 0; /* Agrega espacio arriba y abajo de los párrafos */
+}
+
+.boton{
+    margin: 30px;
+    display: inline-block;
+    color: #ffffff; /* Cambia el color del texto según tu preferencia */
+    padding: 10px 20px; /* Ajusta el relleno (padding) según tus necesidades */
+    text-decoration: none; /* Elimina el subrayado del enlace */
+    border-radius: 1em; /* Añade bordes redondeados al botón */
+    border: 2px solid #e9e3e3;
+    background-color: #0000006c;
+    font-size: 20px;
+}
+
+.Galeria{
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    display: flex;
+    position: relative;
+    flex-wrap:wrap ;
+}
+
+.imagen{
+    width: 20%;
+    height: 500px;
+    overflow: hidden;
+    position: relative;
+}
+
+.imagen img{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.arriba{
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-style: solid ;
+  /*tomar el 25 del alto y 100 al arriba tipo asi: / */
+  border-width: 15vh 100vw 0 0;
+  border-color: #fff transparent transparent transparent;
+
+}
+
+.abajo{
+    z-index: 2;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-style: solid;
+    /*tomar el 25 del alto y 100 al arriba tipo asi: / */
+    border-width: 0 0 15vh 100vw;
+    border-color:  transparent transparent #ffffff transparent;
+}
